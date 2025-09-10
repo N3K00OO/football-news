@@ -31,6 +31,10 @@ SECRET_KEY = 'django-insecure-w7&b(@)8c4_xwkh3vwd4-24o(@uk1do#p=ri_9xodwj_gl38#(
 PRODUCTION = os.getenv('PRODUCTION', 'False').lower() == 'true'
 DEBUG = True
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://gregorius-ega-footballnews.pbp.cs.ui.ac.id/"
+]
+
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "gregorius-ega-footballnews.pbp.cs.ui.ac.id"]
 
 
@@ -61,7 +65,7 @@ ROOT_URLCONF = 'football_news.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
